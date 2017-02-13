@@ -3,8 +3,8 @@
 /**
  * Created by Administrator on 2017/2/13.
  */
-var colleague = function colleague() {
-  var FQ = 'gulp';
-  console.log(FQ);
+var colleague = function colleague(num) {
+  var FQ = 'gulp-projec.';
+  console.log(FQ + num);
 };
-colleague();
+colleague('1.3333');

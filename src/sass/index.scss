@@ -1,14 +1,18 @@
-$main-color: #205;
+$main-color: #295;
 $style: solid;
 $base-fontSize: 16px;
 
 
 div {
+  border: 1px $style $main-color;
+  border-radius: $base-fontSize;
+  transform: scale(0.5 );
   width: 50%;
   height: 400px;
   overflow: hidden;
+  background: url("../image/bg.jpg") no-repeat;
   a {
     color: $main-color;
-    font-size: $base-fontSize * 2;
+    font-size: $base-fontSize * 5;
   }
 }
