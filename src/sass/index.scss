@@ -2,11 +2,30 @@ $main-color: #205;
 $style: solid;
 $base-fontSize: 16px;
 
+@function px2rem($px, $base-font-size: 75px) {
+  @if (unitless($px)) {
+    @return px2rem($px + 0px); // That may fail.
+  } @else if (unit($px) == rem) {
+    @return $px;
+  }
+  @return ($px / $base-font-size) * 1rem;
+}
+
+@mixin font-dpr($font-size) {
+  font-size: $font-size;
+  [data-dpr="2"] & {
+    font-size: $font-size * 2;
+  }
+  [data-dpr="3"] & {
+    font-size: $font-size * 3;
+  }
+}
 
 div {
   width: 50%;
-  height: 400px;
+  height: px2rem(455px);
   overflow: hidden;
+  @include font-dpr(16px);
   a {
     color: $main-color;
     font-size: $base-fontSize * 2;

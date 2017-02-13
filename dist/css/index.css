@@ -1,7 +1,12 @@
 div {
   width: 50%;
-  height: 400px;
-  overflow: hidden; }
+  height: 6.06667rem;
+  overflow: hidden;
+  font-size: 16px; }
+  [data-dpr="2"] div {
+    font-size: 32px; }
+  [data-dpr="3"] div {
+    font-size: 48px; }
   div a {
     color: #205;
     font-size: 32px; }
