@@ -1,8 +1,7 @@
 div {
   border: 1px solid #295;
   border-radius: 16px;
-  -webkit-transform: scale(0.5);
-          transform: scale(0.5);
+  transform: scale(0.5);
   width: 50%;
   height: 400px;
   overflow: hidden;

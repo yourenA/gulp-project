@@ -76,10 +76,10 @@ gulp.task('image', function() {
 gulp.task('release', ['sass', 'html','js','image']);
 
 gulp.task('watch', function() {
-    gulp.watch('./src/sass/*.scss', ['sass']); //监控scss文件
-    gulp.watch(['./src/*.html'], ['html']); //监控html文件
-    gulp.watch(['./src/js/*.js'], ['js']); //监控js文件
-    gulp.watch(['./src/image/*'], ['image']); //监控图片文件
+    gulp.watch('src/sass/*.scss', ['sass']); //监控scss文件
+    gulp.watch(['src/*.html'], ['html']); //监控html文件
+    gulp.watch(['src/js/*.js'], ['js']); //监控js文件
+    gulp.watch(['src/image/*'], ['image']); //监控图片文件
 });
 
 gulp.task('clean', function(){
