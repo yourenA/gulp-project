@@ -1,0 +1,14 @@
+$main-color: #205;
+$style: solid;
+$base-fontSize: 16px;
+
+
+div {
+  width: 50%;
+  height: 400px;
+  overflow: hidden;
+  a {
+    color: $main-color;
+    font-size: $base-fontSize * 2;
+  }
+}

@@ -1,0 +1,7 @@
+div {
+  width: 50%;
+  height: 400px;
+  overflow: hidden; }
+  div a {
+    color: #205;
+    font-size: 32px; }
