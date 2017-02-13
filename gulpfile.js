@@ -7,12 +7,14 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     postcss = require('gulp-postcss'),
     autoprefixer = require('autoprefixer'),
-    uglify=require('gulp-uglify');
-var browserSync = require('browser-sync');
-var nano = require('gulp-cssnano');
-var rename = require('gulp-rename');
-var imagemin = require('gulp-imagemin');
-var clean = require('gulp-clean');
+    uglify=require('gulp-uglify'),
+    browserSync = require('browser-sync'),
+    nano = require('gulp-cssnano'),
+    rename = require('gulp-rename'),
+    imagemin = require('gulp-imagemin'),
+    concat  = require('gulp-concat'),
+    sourcemaps = require('gulp-sourcemaps'),
+    clean = require('gulp-clean');
 
 gulp.task('server', function() {
     browserSync.init({
@@ -52,10 +54,13 @@ gulp.task('sass', function() {
 
 gulp.task('js', function() {
     gulp.src('./src/js/*.js')
+        .pipe(sourcemaps.init())
         .pipe(babel({
             presets: ['es2015']
         }))
+        .pipe(sourcemaps.write())
         .pipe(gulp.dest('./dist/js'))
+        .pipe(sourcemaps.write())
         .pipe(browserSync.reload({stream: true}))
         .pipe(uglify())
         .pipe(rename(function (path) {
@@ -64,7 +69,7 @@ gulp.task('js', function() {
         .pipe(gulp.dest('./dist/js'))
 });
 gulp.task('image', function() {
-    gulp.src('./src/image/*')
+    gulp.src('./src/image/*.{png,jpeg,jpg,gif,svg,ico}')
         .pipe(imagemin())
         .pipe(gulp.dest('./dist/image'))
 });
