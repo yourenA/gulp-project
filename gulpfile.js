@@ -34,9 +34,9 @@ gulp.task('js', function() {
         .pipe(connect.reload());
 });
 gulp.task('watch', function() {
-    gulp.watch('./src/sass/*.scss', ['sass']); //监控scss文件
-    gulp.watch(['./src/*.html'], ['html']); //监控html文件
-    gulp.watch(['./src/js/*.js'], ['js']); //监控js文件
+    gulp.watch('src/sass/*.scss', ['sass']); //监控scss文件
+    gulp.watch(['src/*.html'], ['html']); //监控html文件
+    gulp.watch(['src/js/*.js'], ['js']); //监控js文件
 });
 
 gulp.task('default', ['connect', 'watch']);
